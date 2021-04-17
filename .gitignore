@@ -1,0 +1,4 @@
+/vendor/*
+/runtime/*
+/tests/local.php
+/.phpunit.result.cache

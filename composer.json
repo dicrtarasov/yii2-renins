@@ -1,0 +1,58 @@
+{
+    "name": "dicr/yii2-renins",
+    "type": "yii2-extension",
+    "license": "MIT",
+    "description": "renins API for Yii2",
+    "keywords": ["dicr", "yii2", "renins"],
+    "homepage": "https://gitlab.com/dicr/yii2-renins",
+    "authors": [
+        {
+            "name": "Igor Tarasov",
+            "email": "develop@dicr.org",
+            "homepage": "http://dicr.org",
+            "role": "developer"
+        }
+    ],
+
+    "support": {
+        "source": "https://gitlab.com/dicr/yii2-renins.git"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "dicr\\renins\\": "src/"
+        }
+    },
+
+    "autoload-dev": {
+        "psr-4": {
+            "dicr\\tests\\": "tests/"
+        }
+    },
+
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "require": {
+        "php": "~7.4 || ~8.0",
+        "ext-curl": "*",
+
+        "yiisoft/yii2": "~2.0",
+        "yiisoft/yii2-httpclient": "2.0.13",
+
+        "dicr/yii2-json": "~2.0",
+        "dicr/yii2-helper": "~4.5",
+        "dicr/yii2-validate": "~2.3"
+    },
+
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "phpunit/phpunit": "~9.5"
+    },
+
+    "repositories": [
+        {"type": "composer", "url": "https://asset-packagist.org"},
+        {"type": "git", "url": "https://gitlab.com/dicr/yii2-json.git"},
+        {"type": "git", "url": "https://gitlab.com/dicr/yii2-helper.git"},
+        {"type": "git", "url": "https://gitlab.com/dicr/yii2-validate.git"}
+    ]
+}
