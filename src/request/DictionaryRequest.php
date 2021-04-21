@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 21.04.21 11:45:54
+ * @version 21.04.21 18:43:45
  */
 
 declare(strict_types = 1);
@@ -90,12 +90,12 @@ class DictionaryRequest extends ReninsRequest
     public const PRODUCT_KOR = 'Коробочная Ипотека';
 
     /** @var string */
-    public const PRODUCT_PRO = 'Страхование имущества';
+    public const PRODUCT_ISB = 'Ипотека Сбербанк';
 
     /** @var string[] */
     public const PRODUCT = [
         self::PRODUCT_KOR,
-        self::PRODUCT_PRO
+        self::PRODUCT_ISB
     ];
 
     /** @var string */
