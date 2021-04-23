@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 21.04.21 18:43:45
+ * @version 24.04.21 01:47:19
  */
 
 declare(strict_types = 1);
@@ -151,7 +151,7 @@ class DictionaryRequest extends ReninsRequest
         $json = $this->api->cache->getOrSet(
             [__METHOD__, $this->json],
             fn() => parent::send()->json,
-            86400
+            86400 * 7
         );
 
         return new DictionaryResponse([
