@@ -3,12 +3,13 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 12:58:04
+ * @version 24.04.21 04:29:58
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\entity;
 
+use dicr\renins\DateValidator;
 use dicr\renins\Entity;
 
 /**
@@ -60,7 +61,7 @@ class Parametr extends Entity
             ['decimalValue', 'number'],
             ['decimalValue', 'filter', 'filter' => 'floatval', 'skipOnEmpty' => true],
 
-            ['dateValue', 'date', 'format' => 'php:Y-m-d\TH:i:s.p\Z'],
+            ['dateValue', DateValidator::class],
 
             ['boolValue', 'boolean'],
             ['boolValue', 'filter', 'filter' => 'boolval', 'skipOnEmpty' => true],

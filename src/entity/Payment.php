@@ -3,12 +3,13 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 12:58:04
+ * @version 24.04.21 04:30:16
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\entity;
 
+use dicr\renins\DateValidator;
 use dicr\renins\Entity;
 
 /**
@@ -41,7 +42,7 @@ class Payment extends Entity
             ['number', 'integer', 'min' => 1],
             ['number', 'filter', 'filter' => 'intval', 'skipOnEmpty' => true],
 
-            ['date', 'date', 'format' => 'php:Y-m-d\TH:i:s\.p\Z'],
+            ['date', DateValidator::class],
 
             ['sum', 'default'],
             ['sum', 'number', 'min' => 0],
