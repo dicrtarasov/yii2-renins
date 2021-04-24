@@ -3,12 +3,13 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 13:06:23
+ * @version 25.04.21 01:02:37
  */
 
 declare(strict_types = 1);
 namespace dicr\renins;
 
+use dicr\http\CachingClient;
 use dicr\renins\request\TokenRequest;
 use Yii;
 use yii\base\Component;
@@ -22,7 +23,7 @@ use yii\httpclient\CurlTransport;
 /**
  * Renins API.
  *
- * @property-read Client $httpClient
+ * @property-read CachingClient $httpClient
  * @property-read string $token
  *
  * @link http://confluence.teamss.ru/pages/viewpage.action?pageId=18809309
@@ -74,26 +75,35 @@ class Renins extends Component
         $this->cache = Instance::ensure($this->cache, CacheInterface::class);
     }
 
+    /** @var CachingClient */
+    private $_httpClient;
+
     /**
      * HTTP Client
      *
-     * @return Client
+     * @return CachingClient
      */
-    public function getHttpClient(): Client
+    public function getHttpClient(): CachingClient
     {
-        return new Client([
-            'transport' => CurlTransport::class,
-            'baseUrl' => $this->url,
-            'requestConfig' => [
-                'format' => Client::FORMAT_JSON,
-                'options' => [
-                    CURLOPT_ENCODING => '',
+        if ($this->_httpClient === null) {
+            $this->_httpClient = new CachingClient([
+                'cacheDuration' => 86400,
+                'cacheMethods' => ['GET', 'POST'],
+                'transport' => CurlTransport::class,
+                'baseUrl' => $this->url,
+                'requestConfig' => [
+                    'format' => Client::FORMAT_JSON,
+                    'options' => [
+                        CURLOPT_ENCODING => '',
+                    ]
+                ],
+                'responseConfig' => [
+                    'format' => Client::FORMAT_JSON
                 ]
-            ],
-            'responseConfig' => [
-                'format' => Client::FORMAT_JSON
-            ]
-        ]);
+            ]);
+        }
+
+        return $this->_httpClient;
     }
 
     /**

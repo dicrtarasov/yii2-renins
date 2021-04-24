@@ -30,7 +30,7 @@
         }
     },
 
-    "minimum-stability": "stable",
+    "minimum-stability": "RC",
     "prefer-stable": true,
     "require": {
         "php": "~7.4 || ~8.0",
@@ -41,6 +41,7 @@
 
         "dicr/yii2-json": "~2.0",
         "dicr/yii2-helper": "~4.5",
+        "dicr/yii2-http": "~2.3",
         "dicr/yii2-validate": "~2.3"
     },
 
@@ -53,6 +54,7 @@
         {"type": "composer", "url": "https://asset-packagist.org"},
         {"type": "git", "url": "https://gitlab.com/dicr/yii2-json.git"},
         {"type": "git", "url": "https://gitlab.com/dicr/yii2-helper.git"},
+        {"type": "git", "url": "https://gitlab.com/dicr/yii2-http.git"},
         {"type": "git", "url": "https://gitlab.com/dicr/yii2-validate.git"}
     ]
 }

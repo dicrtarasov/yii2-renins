@@ -3,14 +3,13 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 01:47:19
+ * @version 25.04.21 01:02:24
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\request;
 
 use dicr\renins\ReninsRequest;
-use dicr\validate\ValidateException;
 use yii\httpclient\Response;
 
 /**
@@ -140,22 +139,10 @@ class DictionaryRequest extends ReninsRequest
 
     /**
      * @inheritDoc
+     * @noinspection PhpIncompatibleReturnTypeInspection
      */
     public function send(): DictionaryResponse
     {
-        if (! $this->validate()) {
-            throw new ValidateException($this);
-        }
-
-        // кэшируем ответы на сутки
-        $json = $this->api->cache->getOrSet(
-            [__METHOD__, $this->json],
-            fn() => parent::send()->json,
-            86400 * 7
-        );
-
-        return new DictionaryResponse([
-            'json' => $json
-        ]);
+        return parent::send();
     }
 }
