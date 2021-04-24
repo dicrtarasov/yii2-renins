@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 00:08:48
+ * @version 25.04.21 00:10:22
  */
 
 declare(strict_types = 1);
@@ -19,7 +19,7 @@ use function array_merge;
  */
 class CalcPolicyResponse extends ReninsResponse
 {
-    /** @var ?string идентификатор рассчета */
+    /** @var ?string идентификатор расчета */
     public $calcID;
 
     /** @var CalcPolicyResults */

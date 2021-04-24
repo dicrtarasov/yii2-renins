@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 12:58:04
+ * @version 25.04.21 00:36:10
  */
 
 declare(strict_types = 1);
@@ -13,6 +13,8 @@ use dicr\json\EntityValidator;
 use dicr\renins\Entity;
 
 use function array_merge;
+use function is_bool;
+use function is_string;
 
 /**
  * Риск.
@@ -60,6 +62,26 @@ class Risk extends Entity
         return [
             ['koefficients', 'required'],
             ['koefficients', EntityValidator::class]
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesFromJson(): array
+    {
+        return [
+            'insured' => static fn($val) => is_string($val) ? self::parseBool($val) : $val
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesToJson(): array
+    {
+        return [
+            'insured' => static fn($val) => is_bool($val) ? self::formatBool($val) : $val
         ];
     }
 }

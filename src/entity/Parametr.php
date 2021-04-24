@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 23:36:09
+ * @version 25.04.21 00:41:59
  */
 
 declare(strict_types = 1);
@@ -276,5 +276,17 @@ class Parametr extends Entity
     {
         /** @noinspection SpellCheckingInspection */
         return self::decimalParam('Сумма кредита', 'dogovor.ipotechnDogovor.summaKredita', $value);
+    }
+
+    /**
+     * Год постройки.
+     *
+     * @param int $value
+     * @return static
+     */
+    public static function godPostroiki(int $value): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::intParam('Год постройки', 'dogovor.godPostroiki', $value);
     }
 }
