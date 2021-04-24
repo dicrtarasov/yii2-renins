@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 12:58:04
+ * @version 25.04.21 03:03:59
  */
 
 declare(strict_types = 1);
@@ -24,13 +24,17 @@ class CalcPolicyResult extends Entity
     /** @var Policy */
     public $policy;
 
+    /** @var Errors */
+    public $errors;
+
     /**
      * @inheritDoc
      */
     public function attributeEntities(): array
     {
         return array_merge(parent::attributeEntities(), [
-            'policy' => Policy::class
+            'policy' => Policy::class,
+            'errors' => Errors::class
         ]);
     }
 }

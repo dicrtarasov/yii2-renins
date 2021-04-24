@@ -3,18 +3,21 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 13:05:53
+ * @version 25.04.21 03:08:36
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\request;
 
 use dicr\json\EntityValidator;
+use dicr\renins\entity\Error;
 use dicr\renins\entity\Policy;
 use dicr\renins\ReninsRequest;
 use dicr\renins\ReninsResponse;
+use yii\base\Exception;
 use yii\httpclient\Response;
 
+use function array_map;
 use function array_merge;
 
 /**
@@ -77,7 +80,19 @@ class CalcPolicyRequest extends ReninsRequest
      */
     public function send(): CalcPolicyResponse
     {
-        /** @noinspection PhpIncompatibleReturnTypeInspection */
-        return parent::send();
+        /** @var CalcPolicyResponse $res */
+        $res = parent::send();
+
+        // дополнительные ошибки в результатах
+        foreach ($res->calcPolicyResult->calcResults ?? [] as $calcResult) {
+            if (! empty($calcResult->errors->errors)) {
+                throw new Exception(implode('; ', array_map(
+                    static fn(Error $error) => $error->detailMessage ?: $error->message,
+                    $calcResult->errors->errors
+                )));
+            }
+        }
+
+        return $res;
     }
 }
