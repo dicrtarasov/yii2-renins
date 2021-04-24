@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 00:41:59
+ * @version 25.04.21 03:12:49
  */
 
 declare(strict_types = 1);
@@ -288,5 +288,21 @@ class Parametr extends Entity
     {
         /** @noinspection SpellCheckingInspection */
         return self::intParam('Год постройки', 'dogovor.godPostroiki', $value);
+    }
+
+    /**
+     * Вид деятельности отсутствует в списке.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function vidDeyatOtsutstvuet(bool $value = true): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::boolParam(
+            'Вид деятельности на текущем месте работы отсутствует в списке',
+            'dogovor.vidDeyatOtsutstvuet',
+            $value
+        );
     }
 }
