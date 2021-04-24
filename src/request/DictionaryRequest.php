@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 01:02:24
+ * @version 25.04.21 02:41:44
  */
 
 declare(strict_types = 1);
@@ -65,6 +65,9 @@ class DictionaryRequest extends ReninsRequest
     /** @var string цель кредита */
     public const DICTIONARY_CODE_CEL = 'SKcelKredita';
 
+    /** @var string пол */
+    public const DICTIONARY_CODE_POL = 'pol';
+
     /** @var string[] */
     public const DICTIONARY_CODE = [
         self::DICTIONARY_CODE_BAK,
@@ -82,7 +85,8 @@ class DictionaryRequest extends ReninsRequest
         self::DICTIONARY_CODE_PRD,
         self::DICTIONARY_CODE_IMH,
         self::DICTIONARY_CODE_ZAN,
-        self::DICTIONARY_CODE_CEL
+        self::DICTIONARY_CODE_CEL,
+        self::DICTIONARY_CODE_POL
     ];
 
     /** @var string */
