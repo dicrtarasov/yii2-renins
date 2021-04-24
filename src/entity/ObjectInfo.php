@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 12:58:04
+ * @version 25.04.21 01:43:13
  */
 
 declare(strict_types = 1);
@@ -25,7 +25,7 @@ class ObjectInfo extends Entity
     public $name;
 
     /** @var RiskInfo */
-    public $riskinfo;
+    public $riskInfo;
 
     /** @var string */
     public $alias;
@@ -36,7 +36,7 @@ class ObjectInfo extends Entity
     public function attributeEntities(): array
     {
         return array_merge(parent::attributeEntities(), [
-            'riskinfo' => RiskInfo::class
+            'riskInfo' => RiskInfo::class
         ]);
     }
 
@@ -47,8 +47,8 @@ class ObjectInfo extends Entity
     {
         return [
             [['name', 'alias'], 'trim'],
-            [['name', 'riskinfo', 'alias'], 'required'],
-            ['riskinfo', EntityValidator::class]
+            [['name', 'riskInfo', 'alias'], 'required'],
+            ['riskInfo', EntityValidator::class]
         ];
     }
 }
