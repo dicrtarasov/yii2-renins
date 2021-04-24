@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 02:41:44
+ * @version 25.04.21 02:47:55
  */
 
 declare(strict_types = 1);
@@ -50,6 +50,15 @@ class DictionaryRequest extends ReninsRequest
     /** @var string спорт */
     public const DICTIONARY_CODE_SPT = 'SKsport';
 
+    /** @var string статус занятости */
+    public const DICTIONARY_CODE_ZAN = 'SKstrahStatusZanatosti';
+
+    /** @var string цель кредита */
+    public const DICTIONARY_CODE_CEL = 'SKcelKredita';
+
+    /** @var string Вид скидки */
+    public const DICTIONARY_CODE_SKD = 'SKvidSkidki';
+
     /** @var string виды профессиональной деятельности */
     public const DICTIONARY_CODE_PRF = 'SKprofDeyat';
 
@@ -58,15 +67,6 @@ class DictionaryRequest extends ReninsRequest
 
     /** @var string объект недвижимого имущества */
     public const DICTIONARY_CODE_IMH = 'SKImuschestvo';
-
-    /** @var string статус занятости */
-    public const DICTIONARY_CODE_ZAN = 'SKstrahStatusZanatosti';
-
-    /** @var string цель кредита */
-    public const DICTIONARY_CODE_CEL = 'SKcelKredita';
-
-    /** @var string пол */
-    public const DICTIONARY_CODE_POL = 'pol';
 
     /** @var string[] */
     public const DICTIONARY_CODE = [
@@ -86,7 +86,7 @@ class DictionaryRequest extends ReninsRequest
         self::DICTIONARY_CODE_IMH,
         self::DICTIONARY_CODE_ZAN,
         self::DICTIONARY_CODE_CEL,
-        self::DICTIONARY_CODE_POL
+        self::DICTIONARY_CODE_SKD
     ];
 
     /** @var string */
