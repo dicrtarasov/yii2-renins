@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 23:46:56
+ * @version 25.04.21 02:25:53
  */
 
 declare(strict_types = 1);
@@ -13,6 +13,7 @@ use dicr\json\EntityValidator;
 use dicr\renins\Entity;
 
 use function array_merge;
+use function is_string;
 
 /**
  * Class Policy
@@ -173,6 +174,32 @@ class Policy extends Entity
             [['pechatNaBlanke', 'skidkaAvVProc', 'clientWithoutLoss', 'foulOfInsurance', 'onlinePayment'], 'boolean'],
             [['pechatNaBlanke', 'skidkaAvVProc', 'clientWithoutLoss', 'foulOfInsurance', 'onlinePayment'], 'filter',
                 'filter' => 'boolval', 'skipOnEmpty' => true]
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesFromJson(): array
+    {
+        return [
+            'date' => static fn($val) => is_string($val) ? self::parseDate($val) : $val,
+            'dateBeg' => static fn($val) => is_string($val) ? self::parseDate($val) : $val,
+            'dateEnd' => static fn($val) => is_string($val) ? self::parseDate($val) : $val,
+            'dateCalc' => static fn($val) => is_string($val) ? self::parseDate($val) : $val
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesToJson(): array
+    {
+        return [
+            'date' => static fn($val) => is_string($val) ? self::formatDate($val) : $val,
+            'dateBeg' => static fn($val) => is_string($val) ? self::formatDate($val) : $val,
+            'dateEnd' => static fn($val) => is_string($val) ? self::formatDate($val) : $val,
+            'dateCalc' => static fn($val) => is_string($val) ? self::formatDate($val) : $val
         ];
     }
 }

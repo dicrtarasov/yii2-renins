@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 01:02:37
+ * @version 25.04.21 02:27:40
  */
 
 declare(strict_types = 1);
@@ -19,6 +19,8 @@ use yii\caching\CacheInterface;
 use yii\di\Instance;
 use yii\httpclient\Client;
 use yii\httpclient\CurlTransport;
+
+use const CURLOPT_ENCODING;
 
 /**
  * Renins API.
@@ -136,7 +138,7 @@ class Renins extends Component
 
             $res = $req->send();
             $token = $res->accessToken;
-            $this->cache->set(__CLASS__, $token, $res->expiresIn);
+            $this->cache->set(__METHOD__, $token, $res->expiresIn);
         }
 
         return $token;

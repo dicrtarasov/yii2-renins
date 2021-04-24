@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 00:36:10
+ * @version 25.04.21 02:18:10
  */
 
 declare(strict_types = 1);
@@ -60,7 +60,7 @@ class Risk extends Entity
     public function rules(): array
     {
         return [
-            ['koefficients', 'required'],
+            ['koefficients', 'default'],
             ['koefficients', EntityValidator::class]
         ];
     }
