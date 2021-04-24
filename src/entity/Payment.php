@@ -3,14 +3,15 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 04:30:16
+ * @version 24.04.21 23:44:23
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\entity;
 
-use dicr\renins\DateValidator;
 use dicr\renins\Entity;
+
+use function is_string;
 
 /**
  * Платеж
@@ -42,11 +43,32 @@ class Payment extends Entity
             ['number', 'integer', 'min' => 1],
             ['number', 'filter', 'filter' => 'intval', 'skipOnEmpty' => true],
 
-            ['date', DateValidator::class],
+            ['date', 'required'],
+            ['date', 'filter', 'filter' => static fn($val) => self::parseDate($val), 'skipOnEmpty' => true],
 
-            ['sum', 'default'],
+            ['sum', 'required'],
             ['sum', 'number', 'min' => 0],
             ['sum', 'filter', 'filter' => 'floatval', 'skipOnEmpty' => true]
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesFromJson(): array
+    {
+        return [
+            'date' => static fn($val) => is_string($val) ? self::parseDate($val) : $val
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesToJson(): array
+    {
+        return [
+            'date' => static fn($val) => is_string($val) ? self::formatDate($val) : $val
         ];
     }
 }

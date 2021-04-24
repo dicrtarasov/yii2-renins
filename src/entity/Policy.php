@@ -3,14 +3,13 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 04:30:47
+ * @version 24.04.21 23:46:56
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\entity;
 
 use dicr\json\EntityValidator;
-use dicr\renins\DateValidator;
 use dicr\renins\Entity;
 
 use function array_merge;
@@ -165,7 +164,8 @@ class Policy extends Entity
             [['product', 'insurant', 'insuranceObjects', 'paymentsPlan', 'paymentsFact', 'pointOfSale', 'userInfo',
                 'parameters'], EntityValidator::class],
 
-            [['date', 'dateBeg', 'dateEnd', 'dateCalc'], DateValidator::class],
+            [['date', 'dateBeg', 'dateEnd', 'dateCalc'], 'filter',
+                'filter' => static fn($val) => self::parseDate($val), 'skipOnEmpty' => true],
 
             [['insPremTotal', 'discountUnderwriter'], 'number'],
             [['insPremTotal', 'discountUnderwriter'], 'filter', 'filter' => 'floatval', 'skipOnEmpty' => true],

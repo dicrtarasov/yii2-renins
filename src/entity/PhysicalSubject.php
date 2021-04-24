@@ -3,17 +3,17 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 04:30:26
+ * @version 24.04.21 23:44:51
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\entity;
 
 use dicr\json\EntityValidator;
-use dicr\renins\DateValidator;
 use dicr\renins\Entity;
 
 use function array_merge;
+use function is_string;
 
 /**
  * Персона.
@@ -108,9 +108,28 @@ class PhysicalSubject extends Entity
 
             ['email', 'email'],
 
-            ['birthDate', DateValidator::class]
+            ['birthDate', 'filter', 'filter' => static fn($val) => self::parseDate($val), 'skipOnEmpty' => true]
         ];
     }
 
+    /**
+     * @inheritDoc
+     */
+    public function attributesFromJson(): array
+    {
+        return [
+            'birthDate' => static fn($val) => is_string($val) ? self::parseDate($val) : $val
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesToJson(): array
+    {
+        return [
+            'birthDate' => static fn($val) => is_string($val) ? self::formatDate($val) : $val
+        ];
+    }
 }
 
