@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 04:29:43
+ * @version 24.04.21 22:38:21
  */
 
 declare(strict_types = 1);
@@ -24,9 +24,19 @@ class DateValidator extends Validator
      */
     public function validateAttribute($model, $attribute): void
     {
-        $val = $model->{$attribute};
+        $model->{$attribute} = self::formatValue($model->{$attribute});
+    }
 
-        $model->{$attribute} = $val === null || $val === '' ? null :
-            Yii::$app->formatter->asDate($val, 'php:Y-m-d') . 'T00:00:00.000Z';
+    /**
+     * Форматирует значение.
+     *
+     * @param ?string $value
+     * @return ?string
+     * @throws InvalidConfigException
+     */
+    public static function formatValue(?string $value): ?string
+    {
+        return $value === null || $value === '' ? null :
+            Yii::$app->formatter->asDate($value, 'php:Y-m-d') . 'T00:00:00.000Z';
     }
 }
