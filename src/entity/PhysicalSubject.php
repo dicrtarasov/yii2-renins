@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 24.04.21 23:44:51
+ * @version 25.04.21 02:15:13
  */
 
 declare(strict_types = 1);
@@ -102,7 +102,7 @@ class PhysicalSubject extends Entity
             [['internalID', 'middleName', 'lastNameLat', 'firstNameLat', 'middleNameLat', 'inn', 'snils', 'email',
                 'passport', 'document', 'residenceAddress'], 'default'],
 
-            [['lastName', 'firstName', 'birthDate', 'phone', 'sex', 'citizenship', 'factAddress'], 'required'],
+            [['lastName', 'firstName', 'birthDate', 'phone', 'sex', 'citizenship', 'factAddress'], 'default'],
 
             [['passport', 'document', 'factAddress', 'residenceAddress'], EntityValidator::class],
 
