@@ -3,13 +3,15 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 26.04.21 21:29:18
+ * @version 26.04.21 21:33:00
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\request;
 
 use dicr\renins\ReninsRequest;
+use yii\httpclient\Client;
+use yii\httpclient\Request;
 use yii\httpclient\Response;
 
 use function base64_encode;
@@ -127,6 +129,17 @@ class TokenRequest extends ReninsRequest
         }
 
         return $data;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function httpRequest(): Request
+    {
+        $req = parent::httpRequest();
+        $req->format = Client::FORMAT_URLENCODED;
+
+        return $req;
     }
 
     /**
