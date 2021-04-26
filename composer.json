@@ -41,7 +41,7 @@
 
         "dicr/yii2-json": "~2.0",
         "dicr/yii2-helper": "~4.5",
-        "dicr/yii2-http": "~2.3",
+        "dicr/yii2-http": "~2.4",
         "dicr/yii2-validate": "~2.3"
     },
 

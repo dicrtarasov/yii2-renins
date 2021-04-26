@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 02:27:40
+ * @version 26.04.21 21:29:13
  */
 
 declare(strict_types = 1);
@@ -89,7 +89,7 @@ class Renins extends Component
     {
         if ($this->_httpClient === null) {
             $this->_httpClient = new CachingClient([
-                'cacheDuration' => 86400,
+                'cacheDuration' => 55, // по умолчанию кэшируем на 55 секунд
                 'cacheMethods' => ['GET', 'POST'],
                 'transport' => CurlTransport::class,
                 'baseUrl' => $this->url,

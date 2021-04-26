@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8d8866f47062488f32e08d4b580e50e2",
+    "content-hash": "196d908cc6781acd582f4f34c594f3ab",
     "packages": [
         {
             "name": "bower-asset/inputmask",
@@ -203,11 +203,11 @@
         },
         {
             "name": "dicr/yii2-http",
-            "version": "2.3.1",
+            "version": "2.4.1",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-http.git",
-                "reference": "12afc68c0d681576ec70affd3713de7d57d0dfc4"
+                "reference": "170d0b6fe02c2735ffb56ef2da5a5f58b9f902c9"
             },
             "require": {
                 "dicr/yii2-helper": "~4.5",
@@ -256,15 +256,15 @@
             "support": {
                 "source": "https://gitlab.com/dicr/yii2-http.git"
             },
-            "time": "2021-04-24T19:57:45+00:00"
+            "time": "2021-04-26T16:25:19+00:00"
         },
         {
             "name": "dicr/yii2-json",
-            "version": "2.0.7",
+            "version": "2.0.8",
             "source": {
                 "type": "git",
                 "url": "https://gitlab.com/dicr/yii2-json.git",
-                "reference": "cd146ef412fa402c74282bbd52edbc0ea867f1f8"
+                "reference": "69345c99e06a3bacafae2195f249a50aaaa0812c"
             },
             "require": {
                 "dicr/yii2-validate": "~2.3",
@@ -309,7 +309,7 @@
             "support": {
                 "source": "https://gitlab.com/dicr/yii2-json.git"
             },
-            "time": "2021-03-31T14:12:56+00:00"
+            "time": "2021-04-24T21:12:27+00:00"
         },
         {
             "name": "dicr/yii2-validate",

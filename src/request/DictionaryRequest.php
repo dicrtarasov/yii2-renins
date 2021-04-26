@@ -3,13 +3,15 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 02:47:55
+ * @version 26.04.21 21:28:22
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\request;
 
+use dicr\http\CachingClient;
 use dicr\renins\ReninsRequest;
+use yii\httpclient\Request;
 use yii\httpclient\Response;
 
 /**
@@ -129,6 +131,19 @@ class DictionaryRequest extends ReninsRequest
     protected function url(): string
     {
         return '/IpotekaAPI/1.0.0/dictionary';
+    }
+
+    /**
+     * @inheritDoc
+     */
+    protected function httpRequest(): Request
+    {
+        $req = parent::httpRequest();
+
+        // кэшируем словари на неделю
+        $req->headers->add(CachingClient::CACHE_CONTROL, CachingClient::CACHE_MAX_AGE . '=' . (86400 * 7));
+
+        return $req;
     }
 
     /**
