@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 25.04.21 03:12:49
+ * @version 26.04.21 17:54:31
  */
 
 declare(strict_types = 1);
@@ -304,5 +304,18 @@ class Parametr extends Entity
             'dogovor.vidDeyatOtsutstvuet',
             $value
         );
+    }
+
+    /**
+     * Дата рождения.
+     *
+     * @param string $value
+     * @return static
+     * @throws InvalidConfigException
+     */
+    public static function dataRogd(string $value): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::dateParam('Дата рождения', 'dogovor.zastr1.fl.dataRogd', $value);
     }
 }
