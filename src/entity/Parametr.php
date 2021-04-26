@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 26.04.21 17:54:31
+ * @version 26.04.21 20:45:52
  */
 
 declare(strict_types = 1);
@@ -317,5 +317,66 @@ class Parametr extends Entity
     {
         /** @noinspection SpellCheckingInspection */
         return self::dateParam('Дата рождения', 'dogovor.zastr1.fl.dataRogd', $value);
+    }
+
+    /**
+     * Город выдачи кредита.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function gorodVidachiKredita(string $value): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Город выдачи кредита', 'dogovor.gorodVidachiKredita', $value);
+    }
+
+    /**
+     * Дата.
+     *
+     * @param string $value
+     * @return static
+     * @throws InvalidConfigException
+     */
+    public static function data(string $value): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::dateParam('Дата', 'dogovor.ipotechnDogovor.data', $value);
+    }
+
+    /**
+     * Статус занятости.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function strahStatusZanatosti(string $value = 'нет в списке'): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Статус занятости Страхователя', 'dogovor.strahStatusZanatosti', $value);
+    }
+
+    /**
+     * Застрахованный является Страхователем
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function zastrahYavlstrah(bool $value = true): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::boolParam('Застрахованный является Страхователем', 'dogovor.zastrahYavlstrah', $value);
+    }
+
+    /**
+     * Занимается экстремальными видами спорта из списка.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function extremSport(bool $value = false): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::boolParam('Занимается экстремальными видами спорта из списка', 'dogovor.extremSport', $value);
     }
 }
