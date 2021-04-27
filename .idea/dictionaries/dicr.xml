@@ -2,9 +2,11 @@
   <dictionary name="dicr">
     <words>
       <w>blanke</w>
+      <w>davlen</w>
       <w>deyat</w>
       <w>deyatelnost</w>
       <w>epolicy</w>
+      <w>extrem</w>
       <w>fransiza</w>
       <w>gorod</w>
       <w>imuschestvo</w>
@@ -22,6 +24,8 @@
       <w>ksport</w>
       <w>kstrah</w>
       <w>kvid</w>
+      <w>nalichie</w>
+      <w>nign</w>
       <w>otsutstvuet</w>
       <w>parametr</w>
       <w>pechat</w>
@@ -29,17 +33,23 @@
       <w>postroiki</w>
       <w>punkt</w>
       <w>raion</w>
+      <w>razmer</w>
       <w>regiaona</w>
       <w>renins</w>
       <w>riskinfo</w>
+      <w>riskom</w>
       <w>rogd</w>
       <w>skidka</w>
       <w>skidki</w>
       <w>snils</w>
       <w>strah</w>
       <w>strana</w>
+      <w>svyaz</w>
       <w>tipdokumenta</w>
       <w>tipoplati</w>
+      <w>usltruda</w>
+      <w>verhn</w>
+      <w>vidachi</w>
       <w>yavlstrah</w>
       <w>zanatosti</w>
       <w>zastrah</w>

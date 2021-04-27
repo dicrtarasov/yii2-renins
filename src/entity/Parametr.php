@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 26.04.21 20:45:52
+ * @version 28.04.21 00:56:29
  */
 
 declare(strict_types = 1);
@@ -378,5 +378,105 @@ class Parametr extends Entity
     {
         /** @noinspection SpellCheckingInspection */
         return self::boolParam('Занимается экстремальными видами спорта из списка', 'dogovor.extremSport', $value);
+    }
+
+    /**
+     * Наличие газосодержащих коммуникаций.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function nalichieGazKom(bool $value = false): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::boolParam('Наличие газосодержащих коммуникаций', 'dogovor.nalichieGazKom', $value);
+    }
+
+    /**
+     * Вес.
+     *
+     * @param float $value
+     * @return static
+     */
+    public static function ves(float $value = 80): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::decimalParam('Вес', 'dogovor.zastr1.medPokazateli.ves', $value);
+    }
+
+    /**
+     * Нижнее давление.
+     *
+     * @param int $value
+     * @return static
+     */
+    public static function nignDavlen(int $value = 80): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::intParam('Нижнее давление', 'dogovor.zastr1.medPokazateli.nignDavlen', $value);
+    }
+
+    /**
+     * Верхнее давление.
+     *
+     * @param int $value
+     * @return static
+     */
+    public static function verhnDavlen(int $value = 120): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::intParam('Верхнее давление', 'dogovor.zastr1.medPokazateli.verhnDavlen', $value);
+    }
+
+    /**
+     * Рост.
+     *
+     * @param float $value
+     * @return static
+     */
+    public static function rost(float $value = 180): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::decimalParam('Рост', 'dogovor.zastr1.medPokazateli.rost', $value);
+    }
+
+    /**
+     * Условия труда связаны с повышенным риском для жизни и здоровья.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function usltrudaSvyazSRiskom(bool $value = false): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam(
+            'Условия труда связаны с повышенным риском для жизни и здоровья',
+            'dogovor.usltrudaSvyazSRiskom',
+            $value ? 'да' : 'нет'
+        );
+    }
+
+    /**
+     * Вид скидки.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function vidSkidki1(string $value = 'Не применяется'): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Вид скидки', 'dogovor.vidSkidki1', $value);
+    }
+
+    /**
+     * Размер скидки.
+     *
+     * @param float $value
+     * @return static
+     */
+    public static function razmerSkidki1(float $value = 0): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::decimalParam('Размер скидки', 'dogovor.razmerSkidki1', $value);
     }
 }
