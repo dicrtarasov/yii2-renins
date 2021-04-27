@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 28.04.21 03:35:34
+ * @version 28.04.21 04:35:14
  */
 
 declare(strict_types = 1);
@@ -371,13 +371,13 @@ class Parametr extends Entity
     /**
      * Занимается экстремальными видами спорта из списка.
      *
-     * @param bool $value
+     * @param string $value
      * @return static
      */
-    public static function extremSport(bool $value = false): self
+    public static function extremSport(string $value = 'нет'): self
     {
         /** @noinspection SpellCheckingInspection */
-        return self::boolParam('Занимается экстремальными видами спорта из списка', 'dogovor.extremSport', $value);
+        return self::stringParam('Занимается экстремальными видами спорта из списка', 'dogovor.extremSport', $value);
     }
 
     /**
