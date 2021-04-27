@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 28.04.21 00:56:29
+ * @version 28.04.21 03:35:34
  */
 
 declare(strict_types = 1);
@@ -350,7 +350,7 @@ class Parametr extends Entity
      * @param string $value
      * @return static
      */
-    public static function strahStatusZanatosti(string $value = 'нет в списке'): self
+    public static function strahStatusZanatosti(string $value = 'Работник по найму'): self
     {
         /** @noinspection SpellCheckingInspection */
         return self::stringParam('Статус занятости Страхователя', 'dogovor.strahStatusZanatosti', $value);
