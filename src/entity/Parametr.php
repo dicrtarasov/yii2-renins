@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 28.04.21 04:35:14
+ * @version 28.04.21 15:23:09
  */
 
 declare(strict_types = 1);
@@ -478,5 +478,17 @@ class Parametr extends Entity
     {
         /** @noinspection SpellCheckingInspection */
         return self::decimalParam('Размер скидки', 'dogovor.razmerSkidki1', $value);
+    }
+
+    /**
+     * Профессия.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function proffesia(string $value = 'офисный сотрудник'): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Вид профессиональной деятельности', 'dogovor.proffesia', $value);
     }
 }
