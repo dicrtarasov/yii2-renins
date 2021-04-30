@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 28.04.21 15:23:09
+ * @version 01.05.21 02:26:21
  */
 
 declare(strict_types = 1);
@@ -325,7 +325,7 @@ class Parametr extends Entity
      * @param string $value
      * @return static
      */
-    public static function gorodVidachiKredita(string $value): self
+    public static function gorodVidachiKredita(string $value = 'Москва'): self
     {
         /** @noinspection SpellCheckingInspection */
         return self::stringParam('Город выдачи кредита', 'dogovor.gorodVidachiKredita', $value);
