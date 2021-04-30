@@ -1,10 +1,13 @@
 <component name="ProjectDictionaryState">
   <dictionary name="dicr">
     <words>
+      <w>adres</w>
+      <w>anketoi</w>
       <w>blanke</w>
       <w>davlen</w>
       <w>deyat</w>
       <w>deyatelnost</w>
+      <w>dogovor</w>
       <w>epolicy</w>
       <w>extrem</w>
       <w>fransiza</w>
@@ -26,6 +29,8 @@
       <w>kvid</w>
       <w>nalichie</w>
       <w>nign</w>
+      <w>nomer</w>
+      <w>objekta</w>
       <w>otsutstvuet</w>
       <w>parametr</w>
       <w>pechat</w>
@@ -43,14 +48,20 @@
       <w>skidka</w>
       <w>skidki</w>
       <w>snils</w>
+      <w>soglasie</w>
+      <w>sovpad</w>
+      <w>stoimost</w>
       <w>strah</w>
       <w>strana</w>
       <w>svyaz</w>
       <w>tipdokumenta</w>
+      <w>tipimushestva</w>
       <w>tipoplati</w>
       <w>usltruda</w>
       <w>verhn</w>
       <w>vidachi</w>
+      <w>vopr</w>
+      <w>vopros</w>
       <w>yavlstrah</w>
       <w>zanatosti</w>
       <w>zastrah</w>

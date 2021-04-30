@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.05.21 02:28:48
+ * @version 01.05.21 03:05:47
  */
 
 declare(strict_types = 1);
@@ -226,7 +226,6 @@ class Parametr extends Entity
      */
     public static function profDeyatelnost(string $value): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::stringParam('Профессиональная деятельность', 'dogovor.profDeyatelnost', $value);
     }
 
@@ -286,7 +285,6 @@ class Parametr extends Entity
      */
     public static function godPostroiki(int $value): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::intParam('Год постройки', 'dogovor.godPostroiki', $value);
     }
 
@@ -298,7 +296,6 @@ class Parametr extends Entity
      */
     public static function vidDeyatOtsutstvuet(bool $value = true): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::boolParam(
             'Вид деятельности на текущем месте работы отсутствует в списке',
             'dogovor.vidDeyatOtsutstvuet',
@@ -327,7 +324,6 @@ class Parametr extends Entity
      */
     public static function gorodVidachiKredita(string $value = 'Москва'): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::stringParam('Город выдачи кредита', 'dogovor.gorodVidachiKredita', $value);
     }
 
@@ -352,7 +348,6 @@ class Parametr extends Entity
      */
     public static function strahStatusZanatosti(string $value = 'Работник по найму'): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::stringParam('Статус занятости Страхователя', 'dogovor.strahStatusZanatosti', $value);
     }
 
@@ -364,7 +359,6 @@ class Parametr extends Entity
      */
     public static function zastrahYavlstrah(bool $value = true): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::boolParam('Застрахованный является Страхователем', 'dogovor.zastrahYavlstrah', $value);
     }
 
@@ -376,7 +370,6 @@ class Parametr extends Entity
      */
     public static function extremSport(string $value = 'нет'): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::stringParam('Занимается экстремальными видами спорта из списка', 'dogovor.extremSport', $value);
     }
 
@@ -388,7 +381,6 @@ class Parametr extends Entity
      */
     public static function nalichieGazKom(bool $value = false): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::boolParam('Наличие газосодержащих коммуникаций', 'dogovor.nalichieGazKom', $value);
     }
 
@@ -448,7 +440,6 @@ class Parametr extends Entity
      */
     public static function usltrudaSvyazSRiskom(bool $value = false): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::stringParam(
             'Условия труда связаны с повышенным риском для жизни и здоровья',
             'dogovor.usltrudaSvyazSRiskom',
@@ -464,7 +455,6 @@ class Parametr extends Entity
      */
     public static function vidSkidki1(string $value = 'Не применяется'): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::stringParam('Вид скидки', 'dogovor.vidSkidki1', $value);
     }
 
@@ -476,7 +466,6 @@ class Parametr extends Entity
      */
     public static function razmerSkidki1(float $value = 0): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::decimalParam('Размер скидки', 'dogovor.razmerSkidki1', $value);
     }
 
@@ -488,7 +477,146 @@ class Parametr extends Entity
      */
     public static function proffesia(string $value = 'офисный сотрудник'): self
     {
-        /** @noinspection SpellCheckingInspection */
         return self::stringParam('Вид профессиональной деятельности', 'dogovor.proffesia', $value);
+    }
+
+    /**
+     * Номер договора.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function dogovorNomer(string $value): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Номер', 'dogovor.ipotechnDogovor.nomer', $value);
+    }
+
+    /**
+     * Тип недвижимости.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function tipimushestva(string $value): self
+    {
+        return self::stringParam('Объект недвижимого имущества', 'dogovor.tipimushestva', $value);
+    }
+
+    /**
+     * Стоимость имущества.
+     *
+     * @param float $value
+     * @return static
+     */
+    public static function strahStoimostObjekta(float $value): self
+    {
+        return self::decimalParam('Страховая стоимость объекта', 'dogovor.strahStoimostObjekta', $value);
+    }
+
+    /**
+     * Доп. вопрос 1
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function dopVopros1(bool $value = true): self
+    {
+        return self::boolParam('Доп.вопрос 1', 'dogovor.dopVopros1', $value);
+    }
+
+    /**
+     * Доп. вопрос 2
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function dopVopros2(bool $value = true): self
+    {
+        return self::boolParam('Доп.вопрос 2', 'dogovor.dopVopros2', $value);
+    }
+
+    /**
+     * Доп. вопрос 3
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function dopVopros3(bool $value = true): self
+    {
+        return self::boolParam('Доп.вопрос 3', 'dogovor.dopVopros3', $value);
+    }
+
+    /**
+     * Страхователь подтверждает данные, указанные в Анкете о состоянии здоровья.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function soglasieSAnketoi(bool $value = true): self
+    {
+        return self::boolParam(
+            'Страхователь подтверждает данные, указанные в Анкете о состоянии здоровья',
+            'dogovor.soglasieSAnketoi',
+            $value
+        );
+    }
+
+    /**
+     * Вопрос А01.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function voprA01(bool $value = true): self
+    {
+        return self::boolParam('Вопрос А01', 'dogovor.voprA01', $value);
+    }
+
+    /**
+     * Адрес имущества совпадает с адресом страхователя.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function adresImushSovpad(bool $value): self
+    {
+        return self::boolParam('Адрес имущества совпадает с адресом страхователя', 'dogovor.adresImushSovpad', $value);
+    }
+
+    /**
+     * Страна объекта.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function imushStrana(string $value = 'Россия'): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Название', 'dogovor.adresImushestva.strana.name', $value);
+    }
+
+    /**
+     * Регион объекта.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function imushRegion(string $value): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Регион объекта', 'dogovor.adresImushestva.region.name', $value);
+    }
+
+    /**
+     * Адрес имущества.
+     *
+     * @param string $value
+     * @return static
+     */
+    public static function imushAddress(string $value): self
+    {
+        /** @noinspection SpellCheckingInspection */
+        return self::stringParam('Строковое представление адреса', 'dogovor.adresImushestva.adresStroka', $value);
     }
 }
