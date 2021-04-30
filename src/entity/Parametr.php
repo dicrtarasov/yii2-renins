@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.05.21 02:26:21
+ * @version 01.05.21 02:28:48
  */
 
 declare(strict_types = 1);
@@ -334,14 +334,14 @@ class Parametr extends Entity
     /**
      * Дата.
      *
-     * @param string $value
+     * @param ?string $value
      * @return static
      * @throws InvalidConfigException
      */
-    public static function data(string $value): self
+    public static function data(?string $value = null): self
     {
         /** @noinspection SpellCheckingInspection */
-        return self::dateParam('Дата', 'dogovor.ipotechnDogovor.data', $value);
+        return self::dateParam('Дата', 'dogovor.ipotechnDogovor.data', $value ?: date('Y-m-d'));
     }
 
     /**
