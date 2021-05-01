@@ -3,13 +3,15 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.05.21 05:34:45
+ * @version 01.05.21 05:59:03
  */
 
 declare(strict_types = 1);
 namespace dicr\renins\entity;
 
 use dicr\renins\Entity;
+
+use function is_string;
 
 /**
  * Документ
@@ -49,9 +51,31 @@ class DocumentInfo extends Entity
 
             [['type', 'number', 'placeOfIssue', 'dateOfIssue'], 'default'],
 
-            ['dateOfIssue', 'datetime', 'format' => 'php:Y-m-d\TH:i:s.p\Z'],
+            ['dateOfIssue', 'trim'],
+            ['dateOfIssue', 'filter', 'filter' => static fn($val) => self::parseDate($val), 'skipOnEmpty' => true],
+            ['dateOfIssue', 'datetime', 'format' => 'php:Y-m-d'],
 
             [['series', 'kodPodrazd'], 'default']
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesFromJson(): array
+    {
+        return [
+            'dateOfIssue' => static fn($val) => is_string($val) ? self::parseDate($val) : $val
+        ];
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function attributesToJson(): array
+    {
+        return [
+            'dateOfIssue' => static fn($val) => is_string($val) ? self::formatDate($val) : $val
         ];
     }
 }
