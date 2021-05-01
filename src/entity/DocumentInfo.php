@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 13:13:02
+ * @version 01.05.21 05:34:45
  */
 
 declare(strict_types = 1);
@@ -47,7 +47,7 @@ class DocumentInfo extends Entity
         return [
             [['type', 'series', 'number', 'placeOfIssue', 'dateOfIssue', 'kodPodrazd'], 'trim'],
 
-            [['type', 'number', 'placeOfIssue', 'dateOfIssue'], 'required'],
+            [['type', 'number', 'placeOfIssue', 'dateOfIssue'], 'default'],
 
             ['dateOfIssue', 'datetime', 'format' => 'php:Y-m-d\TH:i:s.p\Z'],
 

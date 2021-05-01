@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 12:58:04
+ * @version 01.05.21 05:36:39
  */
 
 declare(strict_types = 1);
@@ -61,7 +61,7 @@ class AddressInfo extends Entity
             [['country', 'postIndex', 'region', 'district', 'locality', 'localityCodeKLADR', 'street', 'houseNumber',
                 'houseCorps', 'houseBuilding', 'flat', 'addressText'], 'trim'],
 
-            [['country', 'postIndex', 'region', 'addressText'], 'required'],
+            [['country', 'postIndex', 'region', 'addressText'], 'default'],
 
             [['district', 'locality', 'localityCodeKLADR', 'street', 'houseNumber', 'houseCorps', 'houseBuilding',
                 'flat'], 'default']
