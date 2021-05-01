@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.05.21 03:05:47
+ * @version 01.05.21 06:06:08
  */
 
 declare(strict_types = 1);
@@ -498,7 +498,7 @@ class Parametr extends Entity
      * @param string $value
      * @return static
      */
-    public static function tipimushestva(string $value): self
+    public static function tipimushestva(string $value = 'Квартира'): self
     {
         return self::stringParam('Объект недвижимого имущества', 'dogovor.tipimushestva', $value);
     }
