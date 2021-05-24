@@ -3,7 +3,7 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 01.05.21 06:06:08
+ * @version 24.05.21 13:12:11
  */
 
 declare(strict_types = 1);
@@ -618,5 +618,16 @@ class Parametr extends Entity
     {
         /** @noinspection SpellCheckingInspection */
         return self::stringParam('Строковое представление адреса', 'dogovor.adresImushestva.adresStroka', $value);
+    }
+
+    /**
+     * Онлайн-отправка документации на email клиента.
+     *
+     * @param bool $value
+     * @return static
+     */
+    public static function onlineOtpravkaDok(bool $value = true): self
+    {
+        return self::boolParam('Онлайн-отправка документации на email клиента', 'dogovor.onlineOtpravkaDok', $value);
     }
 }
