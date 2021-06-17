@@ -3,13 +3,16 @@
  * @copyright 2019-2021 Dicr http://dicr.org
  * @author Igor A Tarasov <develop@dicr.org>
  * @license MIT
- * @version 17.04.21 13:04:24
+ * @version 17.06.21 05:30:20
  */
 
 /** @noinspection PhpMissingDocCommentInspection */
 declare(strict_types = 1);
 
+/**  */
 const YII_ENV = 'dev';
+
+/**  */
 const YII_DEBUG = true;
 
 require_once(__DIR__ . '/local.php');
